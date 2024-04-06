@@ -1,6 +1,6 @@
 function Footer() {
     return (
-    <footer className='footer-wrap'>
+    <footer id="연락처" className='footer-wrap'>
 
     <div className='horizontal-line'></div>
        <div className='footer-container'>

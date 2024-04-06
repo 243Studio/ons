@@ -1,6 +1,5 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
-
+import logo from '../assets/img/logo.svg';
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -15,7 +14,7 @@ import { pageNames } from '../utils/utils';
 
 
 const logoStyle = {
-  width: '140px',
+  width: '40px',
   height: 'auto',
   cursor: 'pointer',
 };
@@ -43,7 +42,7 @@ function Header() {
 
 let pagesOptions = pageNames.map((pageName) => (
     <MenuItem
-        onClick={() => scrollToSection({pageName})}
+        onClick={() => scrollToSection(pageName)}
         sx={{ py: '6px', px: '12px' }}
       >
       <Typography variant="body2" color="text.primary">
@@ -84,7 +83,7 @@ let pagesOptions = pageNames.map((pageName) => (
             >
               <img
                 src={
-                  'https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/61f12e6faf73568658154dae_SitemarkDefault.svg'
+                  logo
                 }
                 style={logoStyle}
                 alt="logo of sitemark"
