@@ -7,13 +7,14 @@ function Footer() {
             <Grid container spacing={2} sx={{display:'flex', mx:'auto', justifyContent:'space-between', alignItems:'center'}}>
                 <Grid item xs={12} sm={4}>
                     <img src={logo} style={{maxWidth:'7rem'}} className='footer-col'/>
+                    <Typography variant="h6" color="text.tertiary" sx={{textAlign:'left', my:'1rem', fontWeight:'800'}}>주식회사 오앤에스</Typography>
+
                 </Grid>
                 <Grid item xs={12} sm={4}>
-                    <Typography variant="h2" color="text.tertiary" sx={{textAlign:'left', marginBottom:'3rem', fontWeight:'800'}}>
+                    <Typography variant="h3" color="text.tertiary" sx={{textAlign:'left', marginBottom:'3rem', fontWeight:'800'}}>
                         연락처
                     </Typography>
                     <ul style={{textAlign:'left'}}>
-                        <li class="name">회사명 : 주식회사 오앤에스</li>
                         <li>
                             <address>
                             주소 : 경기도 부천시 양지로 237
