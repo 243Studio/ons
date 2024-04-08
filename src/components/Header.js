@@ -43,7 +43,7 @@ function Header() {
 let pagesOptions = pageNames.map((pageName) => (
     <MenuItem
         onClick={() => scrollToSection(pageName)}
-        sx={{ py: '6px', px: '12px' }}
+        sx={{ py: '6px', pr: '8px' }}
       >
       <Typography variant="body2" color="text.primary">
       {pageName}
@@ -58,11 +58,11 @@ let pagesOptions = pageNames.map((pageName) => (
         sx={{
           boxShadow: 0,
           justifyContent: 'flex-start',
-          width: '100%',
+          maxWidth:'100vw',
           borderBottom: '0.2px solid gray',
           backgroundColor: 'background.paper'}}
       >
-        <Container maxWidth="100%" >
+        <Container maxWidth="100vw" >
           <Toolbar
             variant="regular"
             sx={() => ({
@@ -71,14 +71,13 @@ let pagesOptions = pageNames.map((pageName) => (
               justifyContent: 'space-between',
               flexShrink: 0,
               maxHeight: 40,
-              width: '100%',   
+              maxWidth: '100vw',   
             })}
           >
             <Box
               sx={{
                 display: 'flex',
-                ml: '0px',
-                px: 0,
+                flexGrow: 2,
               }}
             >
               <img
@@ -92,14 +91,11 @@ let pagesOptions = pageNames.map((pageName) => (
             <Box
               sx={{
                 display: { xs: 'none', md: 'flex' },
-                gap: 0.5,
-                alignItems: 'center',
-                pr:'30px'
+                gap: 0.2,
+                alignItems: 'center',paddingLeft:'40px'
               }}
             >
                               {pagesOptions}
-
-
             </Box>
             <Box sx={{ display: { sm: '', md: 'none' } }}>
               <Button

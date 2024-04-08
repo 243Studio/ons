@@ -1,4 +1,11 @@
 
+
+@font-face {
+  font-family: 'myungjo';
+  src: url('./assets/fonts/Adobe\ Myungjo\ Std\ M.otf') format("M.otf");
+  font-weight: normal;
+  font-style: normal;
+}
 .App {
   display: flex;
   flex-direction: column;
@@ -19,6 +26,7 @@ body{
   display: flex;
   flex-direction: column;
   max-height:100vh;
+  overflow-x: hidden;
   margin:0;
 }
 .App-logo {
