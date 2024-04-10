@@ -84,28 +84,7 @@ function Hero({isOpen}) {
                   분석과 타당한 근거를 바탕으로 여러분에게 새로운 길을 제시하겠습니다.              
               </Typography>
            </Box>
-          </Box>
-          <Box className='image-container' sx={styleOfTheCover}>
-            <img src={building3} alt="building 3" sx={styleOfTheImage} />
-            <Box sx={{
-                position: 'absolute',
-                top: 0,
-                right: 0,
-                bottom: 0,
-                left: 0,
-                bgcolor: 'rgba(0, 0, 0, 0.5)'
-            }} />
-            <Box sx={{position: 'absolute',
-                top: '50%',
-                left: '50%',
-                width: '80%',
-                transform: 'translate(-50%, -50%)',
-                zIndex: 1,
-                color: 'white'}}>
-              <img src={mission} alt="mission" sx={{width: '50%'}}/>
-           </Box>
-          </Box>
-          
+          </Box>          
         </Carousel>
       </Box>
     );
