@@ -1,5 +1,6 @@
 import * as React from 'react';
-import logo from '../assets/img/logo.svg';
+import logo from '../assets/img/logo.png';
+import logoWhite from '../assets/img/logo-white.png';
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -11,6 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import { pageNames } from '../utils/utils';
+import { withTheme } from '@emotion/react';
 
 
 const logoStyle = {
@@ -18,13 +20,47 @@ const logoStyle = {
   height: 'auto',
   cursor: 'pointer',
 };
+const buttonStyle = {
+  fontWeight: 'bold'
+}
 
 function Header() {
+  const headerRef = React.useRef(null);
+  const logoRef = React.useRef(null);
+  const menuRef= React.useRef(null);
+
   const [open, setOpen] = React.useState(false);
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   }
+  
+  
+  React.useEffect(() => {
+    let handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if(headerRef.current){
+        if (currentScrollY > 2) {
+          headerRef.current.style.backgroundColor = "white";
+          headerRef.current.style.color = "black";
+          headerRef.current.style.transition = "background-color 0.5s ease";
+          logoRef.current.src = logo
+          menuRef.current.style.color = "#00448A";
+          menuRef.current.style.transition = "background-color 0.5s ease";
+          logoRef.current.style.transition = "background-color 0.5s ease";
+        }
+        else if(currentScrollY === 0){
+          headerRef.current.style.backgroundColor = "transparent";
+          headerRef.current.style.color = "white";
+          headerRef.current.style.transition = "background-color 0.5s ease";
+          logoRef.current.src = logoWhite;
+          menuRef.current.style.color = "white";
+          logoRef.current.style.transition = "background-color 0.5s ease";
+        }}
+    };
+    window.addEventListener('scroll', ()=>handleScroll());
+    return () => window.removeEventListener('scroll', handleScroll);
+  })
 
   const scrollToSection = (sectionId) => {
     const sectionElement = document.getElementById(sectionId);
@@ -45,7 +81,7 @@ let pagesOptions = pageNames.map((pageName) => (
         onClick={() => scrollToSection(pageName)}
         sx={{ py: '6px', pr: '8px' }}
       >
-      <Typography variant="body2" color="text.primary">
+      <Typography variant="body2" sx={buttonStyle}>
       {pageName}
       </Typography>
     </MenuItem>)
@@ -54,13 +90,14 @@ let pagesOptions = pageNames.map((pageName) => (
   return (
     <div>
       <AppBar
+        ref={headerRef}
+        id="header"
         position="fixed"
         sx={{
           boxShadow: 0,
           justifyContent: 'flex-start',
           maxWidth:'100vw',
-          borderBottom: '0.2px solid gray',
-          backgroundColor: 'background.paper'}}
+        color:'primary'}}
       >
         <Container maxWidth="100vw" >
           <Toolbar
@@ -70,7 +107,7 @@ let pagesOptions = pageNames.map((pageName) => (
               alignItems: 'center',
               justifyContent: 'space-between',
               flexShrink: 0,
-              maxHeight: 40,
+              maxHeight: 50,
               maxWidth: '100vw',   
             })}
           >
@@ -81,8 +118,9 @@ let pagesOptions = pageNames.map((pageName) => (
               }}
             >
               <img
+                ref={logoRef}
                 src={
-                  logo
+                  logoWhite
                 }
                 style={logoStyle}
                 alt="logo of sitemark"
@@ -99,15 +137,15 @@ let pagesOptions = pageNames.map((pageName) => (
             </Box>
             <Box sx={{ display: { sm: '', md: 'none' } }}>
               <Button
-                variant="text"
                 color="primary"
+                variant="text"
                 aria-label="menu"
                 onClick={toggleDrawer(true)}
                 sx={{ minWidth: '30px', p: '4px' }}
               >
-                <MenuIcon />
+                <MenuIcon ref={menuRef} sx={{color:'white'}} />
               </Button>
-              <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>
+              <Drawer anchor="right"  open={open} onClose={toggleDrawer(false)}>
                 <Box
                   sx={{
                     minWidth: '60dvw',
@@ -116,15 +154,6 @@ let pagesOptions = pageNames.map((pageName) => (
                     flexGrow: 1,
                   }}
                 >
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'end',
-                      flexGrow: 1,
-                    }}
-                  >
-                  </Box>
                   {pagesOptions}
                   <Divider />
                 </Box>

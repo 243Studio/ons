@@ -3,7 +3,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './component.css';
 import { googleMapLink } from '../utils/utils';
 
-import partnerLogo from '../assets/img/partners.png';
 import building1 from '../assets/img/building1.jpg';
 import building2 from '../assets/img/building2.jpg';
 import building3 from '../assets/img/building3.jpg';
@@ -11,12 +10,11 @@ import mission from '../assets/img/drawng/mission.png';
 import businessArea from "../assets/img/business-area.png";
 import Typography from '@mui/material/Typography';
 import { businessAreaList } from '../utils/utils';
-import { Box, CardContent, Card, Grid, List,ListItem, ListItemText } from '@mui/material';
+import { Box, CardContent, Card, Grid, } from '@mui/material';
 
 function Hero({isOpen}) {
 
-  let styleOfTheCover = {maxHeight: '100vh', maxWidth: '100vw'
-}
+  let styleOfTheCover = {}
   let styleOfTheImage = {
     position: 'relative', 
     height: '100%',
@@ -24,7 +22,7 @@ function Hero({isOpen}) {
     width: 'auto'}
 
     return (
-    <Box id="회사소개" className={`hero ${isOpen ? 'dropdown-open' : ''}`} sx={{maxHeight:'100vh'}}>
+    <Box id="회사소개" className={`hero ${isOpen ? 'dropdown-open' : ''}`} sx={{backgroundColor:'black'}}>
         <Carousel showThumbs={false} showStatus={false} sx={{maxWidth:'100vw'}}	className='carousel-container'autoPlay infiniteLoop>
           
           <Box className='image-container'  sx={styleOfTheCover}>
