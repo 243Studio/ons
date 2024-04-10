@@ -1,7 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import Header from './components/Header.js';
-import { ResponsiveCard, Hero, Partners, Location } from './components/Main.js';
+import { ResponsiveCard, Hero, Location } from './components/Main.js';
 import { Footer } from './components/Footer.js';
 import { ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material';
 
@@ -30,7 +30,6 @@ function App() {
       <Header isOpen={isOpen} setIsOpen={setIsOpen} />
       <Hero isOpen={isOpen}/>
       <ResponsiveCard/>
-      <Partners/>
       <Location/>
       <Footer/>
     </div>

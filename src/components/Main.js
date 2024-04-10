@@ -111,16 +111,7 @@ function Hero({isOpen}) {
     );
   }
   
-  function Partners() {
-    return (
-      <Box id="파트너" sx={{maxWidth:'80vw', mx:'auto', maxHeight:'100vh', minHeight:'50vh', display:'flex', flexDirection:'column', justifyContent:"flex-start", alignItems:'center'}} className='partner-logo-container'>
-        <Typography variant="h2" color="text.tertiary" sx={{textAlign:'center', my:'3rem', fontWeight:'800'}}>파트너</Typography>
-        <Typography variant="h6" color="text.tertiary" sx={{textAlign:'center', my:'3rem', fontWeight:'800'}}>ONS는 국내외 주요 글로벌 기업과 대기업 위탁 운영 및 직원 파견과 도급 운영을
-성공적으로 수행하고 있는 전문 아웃소싱 기업입니다</Typography>
-        <img className='partner-logo' src={partnerLogo}></img>
-      </Box>
-    )
-  }
+
 function ResponsiveCard(){
 
   let CardList = businessAreaList.map((businessArea) => (
@@ -168,4 +159,4 @@ function Location()
     </Box>
   )
 }
-export {Hero, Partners, ResponsiveCard, Location}
+export {Hero, ResponsiveCard, Location}
