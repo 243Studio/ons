@@ -97,7 +97,9 @@ let pagesOptions = pageNames.map((pageName) => (
           boxShadow: 0,
           justifyContent: 'flex-start',
           maxWidth:'100vw',
-        color:'primary'}}
+          color:'primary',
+          backgroundColor:"transparent"
+      }}
       >
         <Container maxWidth="100vw" >
           <Toolbar
