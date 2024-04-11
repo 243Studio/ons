@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ons/static/css/main.d65ee3f5.css",
-    "main.js": "/ons/static/js/main.5865822b.js",
+    "main.css": "/ons/static/css/main.e8b1bf7f.css",
+    "main.js": "/ons/static/js/main.55f4fe69.js",
     "static/js/453.5565870f.chunk.js": "/ons/static/js/453.5565870f.chunk.js",
     "static/media/Adobe Myungjo Std M.otf": "/ons/static/media/Adobe Myungjo Std M.cea0458c102b4fbe4529.otf",
     "static/media/building1.jpg": "/ons/static/media/building1.f91b4649e90c30ed273b.jpg",
@@ -12,16 +12,18 @@
     "static/media/dispatch2.png": "/ons/static/media/dispatch2.685d4990480cb8ba0ff2.png",
     "static/media/service2.png": "/ons/static/media/service2.95b466d68e29dbd65a30.png",
     "static/media/service1.png": "/ons/static/media/service1.c82243794eb88dad5694.png",
+    "static/media/location.png": "/ons/static/media/location.64cdcb0ef97818161310.png",
     "static/media/logo.png": "/ons/static/media/logo.d37ad9b059beb5fc86dd.png",
     "static/media/logo-white.png": "/ons/static/media/logo-white.ef2b30ef7c6dba1edf9b.png",
     "static/media/logo.svg": "/ons/static/media/logo.488d65a6d7e380669aa5df916cdf9fcb.svg",
     "index.html": "/ons/index.html",
-    "main.d65ee3f5.css.map": "/ons/static/css/main.d65ee3f5.css.map",
-    "main.5865822b.js.map": "/ons/static/js/main.5865822b.js.map",
+    "static/media/okay.svg": "/ons/static/media/okay.befba6d4c6b140647e7847b353c1356d.svg",
+    "main.e8b1bf7f.css.map": "/ons/static/css/main.e8b1bf7f.css.map",
+    "main.55f4fe69.js.map": "/ons/static/js/main.55f4fe69.js.map",
     "453.5565870f.chunk.js.map": "/ons/static/js/453.5565870f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d65ee3f5.css",
-    "static/js/main.5865822b.js"
+    "static/css/main.e8b1bf7f.css",
+    "static/js/main.55f4fe69.js"
   ]
 }
