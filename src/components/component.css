@@ -238,15 +238,16 @@ header{
 
 
     /** HERO SECTION **/
+
     .image-container{
-      height:100%;
+      height:90%;
       width:'auto'
     }
     .illust-container{
       position:absolute;
-      top:80;
+      top:00;
       left:0;
-      height:100%;
+      height:90%;
       padding:0 3rem 20% 3rem;
       box-sizing: border-box;
       width:90%;

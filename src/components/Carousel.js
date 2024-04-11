@@ -31,7 +31,7 @@ function CustomCarousel({items})
                 margin: '0 3px'       // 3
             }
         }}
-        navButtonsAlwaysInvisible={true} sx={{maxHeight:'100vh', width:'100vw'}} indicators={true} interval={4000} 
+        navButtonsAlwaysInvisible={true} sx={{maxHeight:{sx:200, md:689}, width:'100vw'}} indicators={true} interval={4000} 
         >
             {
                 items.map( (itemName) => <Item  key={itemName} item={itemName} />)
@@ -44,7 +44,7 @@ function CustomCarousel({items})
 function Item({item})
 {
     return (
-        <Paper sx={{width:'100vw', height:'100vh'}}>
+        <Paper sx={{width:'100vw', height:{sx:200, md:689}}}>
             <Box sx={{
                 position: 'absolute',
                 top: 0,

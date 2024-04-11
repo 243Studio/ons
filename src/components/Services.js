@@ -10,10 +10,9 @@ let textGridStyle = {
   textAlign:'left',
   flexDirection:'column',
   alignItems:'flex-start',
-  backgroundColor:'rgba(0,68,138,1)',
+  backgroundColor:'rgba(240,240,240,0.5)',
   width:'100%',
-  padding:'1rem 0 0 5rem',
-  color:'white'
+  color:'black'
 }
 let imageGridStyle = {
   display:'flex', 
@@ -57,7 +56,7 @@ function ServiceItem({item, className}) {
           <Typography className="service-text-title" variant="h4">{item.title}</Typography>
             <p className="service-text-content" >{item.content}</p>
           </Grid>
-          <Grid sx={{imageGridStyle}} item xs={12} sm={6} md={6} key={item.id}>
+          <Grid className="service-image-container"  sx={{imageGridStyle}} item xs={12} sm={6} md={6} key={item.id}>
             <img className="service-image" src={item.img}></img>
           </Grid>
         </>
@@ -67,7 +66,7 @@ function ServiceItem({item, className}) {
           <Typography className="service-text-title"  variant="h4">{item.title}</Typography>
           <p className="service-text-content">{item.content}</p>
         </Grid>
-        <Grid d className={className} item xs={12} sm={6} md={6} key={item.id}>
+        <Grid className="service-image-container"  item xs={12} sm={6} md={6} key={item.id}>
           <img className="service-image" src={item.img}></img>
         </Grid>
         
