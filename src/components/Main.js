@@ -90,7 +90,7 @@ function Location()
       <Typography variant="h2" color="text.tertiary" sx={{my:'3rem', fontWeight:'800'}}>
         오시는길
       </Typography>
-      <iframe style={{width:'90%'}} src={googleMapLink}  height="500" className='map' allowFullscreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+      <iframe style={{width:'100%'}} src={googleMapLink}  height="350" className='map' allowFullscreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
     </Box>
   )
 }
