@@ -31,7 +31,7 @@ function CustomCarousel({items})
                 margin: '0 3px'       // 3
             }
         }}
-        navButtonsAlwaysInvisible={true} sx={{maxHeight:{sx:200, md:689}, width:'100vw'}} indicators={true} interval={4000} 
+        navButtonsAlwaysInvisible={true} sx={{maxHeight:{xs:200, md:689}, width:'100vw'}} indicators={true} interval={4000} 
         >
             {
                 items.map( (itemName) => <Item  key={itemName} item={itemName} />)
