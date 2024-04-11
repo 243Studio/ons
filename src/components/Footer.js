@@ -11,17 +11,12 @@ function Footer() {
 
                 </Grid>
                 <Grid item xs={12} sm={4}>
-                    <Typography variant="h3" color="text.tertiary" sx={{textAlign:'left', marginBottom:'3rem', fontWeight:'800'}}>
+                    <Typography variant="h5" color="text.tertiary" sx={{textAlign:'left', marginBottom:'1rem', fontWeight:'800'}}>
                         연락처
                     </Typography>
                     <ul style={{textAlign:'left', color:'#00448A'}}>
-                        <li>
-                            <address>
-                            주소 : 경기도 부천시 양지로 237
-                            </address>
-                        </li>
-                        <li class="tel">TEL : 02-6474-4208 / 010-4520-0449</li>
-                        <li class="email">E-mail : 담당자 김현주 zest@onskorea.co</li>
+                        <li class="tel">+82-02-6474-4208</li>
+                        <li>+82-10-4520-0449</li>
                     </ul>
                 </Grid>
             </Grid>

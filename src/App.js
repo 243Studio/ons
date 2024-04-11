@@ -5,6 +5,7 @@ import { ResponsiveCard, Hero, Location } from './components/Main.js';
 import { Footer } from './components/Footer.js';
 import { ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material';
 import CTA from './components/CTA.js';
+import ContactForm from './components/ContactForm.js';
 
 let theme = createTheme({
     typography: {
@@ -35,7 +36,9 @@ theme = responsiveFontSizes(theme);
 function App() {
   const [isOpen, setIsOpen] = useState(false);
 
-
+  function openContactForm(){
+    console.log('open contact form');
+  }
   return (
     <ThemeProvider theme={theme}>
     <div className="App">
@@ -43,9 +46,11 @@ function App() {
       <Header isOpen={isOpen} setIsOpen={setIsOpen} />
       <Hero isOpen={isOpen}/>
       <ResponsiveCard/>
-      <CTA/>
+      <CTA openContactForm = {openContactForm}/>
       <Location/>
       <Footer/>
+      {//<ContactForm/>
+      }
     </div>
     </ThemeProvider>
   )

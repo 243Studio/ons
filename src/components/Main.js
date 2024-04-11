@@ -12,6 +12,7 @@ import service1 from '../assets/img/icons/service1.png';
 import service2 from '../assets/img/icons/service2.png';
 import service3 from '../assets/img/icons/service3.png';
 import Services from './Services';
+import location from '../assets/img/icons/location.png';
 import logoResponsive from '../assets/img/logo/logo-responsive.png';
 
 
@@ -42,7 +43,7 @@ function Hero({isOpen}) {
               <img  id="illust2" src={service2} />
               <img  id="illust3" src={service3} />
             </Box>
-            <Services/>
+            <Services />
       </Box>
     );
   }
@@ -71,12 +72,8 @@ function ResponsiveCard(){
     </Grid>
   ))
   return(
-    <Box id="서비스" sx ={{position:'relative', maxHeight:'max-content', minHeight:'50vh', display:'flex', flexDirection:'column', justifyContent:'flex-start',my:'2rem', alignItems:'center'}}>
-      <Box my={'6rem'} sx={{display:'flex', justifyContent:'center', alignItems:'center'}} >
-        <img style={{height:'50px', width:'auto'}} src={logoResponsive} ></img>
-        <Typography color="text.tertiary" fontWeight={'bold'}  variant="h3">서비스</Typography>
-      </Box>
-      <Grid  sx={{marginTop:'2rem', maxWidth:'70%', maxHeight:'100%',  }} justifyContent="center" container spacing={2} rowSpacing={5}>
+    <Box  sx ={{position:'relative', maxHeight:'max-content', minHeight:'50vh', display:'flex', flexDirection:'column', justifyContent:'flex-start',mb:'4rem', alignItems:'center'}}>
+      <Grid  sx={{marginTop:'1rem', maxWidth:'70%', maxHeight:'100%',  }} justifyContent="center" container spacing={2} rowSpacing={5}>
       {CardList}
       </Grid>
     </Box>
@@ -86,11 +83,12 @@ function ResponsiveCard(){
 function Location()
 {
   return(
-    <Box id="오시는길" sx={{maxWidth:'100vw', display:'flex', flexDirection:'column', justifyContent:"flex-start", alignItems:'center'}}>
-      <Typography variant="h2" color="text.tertiary" sx={{my:'3rem', fontWeight:'800'}}>
-        오시는길
-      </Typography>
-      <iframe style={{width:'100%'}} src={googleMapLink}  height="350" className='map' allowFullscreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+    <Box id="오시는길" sx={{maxWidth:'100vw', display:'flex', flexDirection:'column', justifyContent:"flex-start", alignItems:'center', }}>
+      <Box my={{xs:'0.5rem', md:'2rem' }} sx={{ display:'flex', pt:'5rem',justifyContent:'center', alignItems:'center'}} >
+        <img style={{height:'25px', width:'auto', paddingRight:'1rem'}} src={location} ></img>
+        <Typography color="text.tertiary" fontWeight={'bold'}   variant="h3">오시는길</Typography>
+  </Box>
+      <iframe style={{width:'100%'}} src={googleMapLink}  height="400" className='map' allowFullscreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
     </Box>
   )
 }
