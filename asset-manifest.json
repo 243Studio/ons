@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ons/static/css/main.733ada15.css",
-    "main.js": "/ons/static/js/main.3627d70e.js",
+    "main.css": "/ons/static/css/main.ca59ed08.css",
+    "main.js": "/ons/static/js/main.674b7540.js",
     "static/js/453.5565870f.chunk.js": "/ons/static/js/453.5565870f.chunk.js",
     "static/media/Adobe Myungjo Std M.otf": "/ons/static/media/Adobe Myungjo Std M.cea0458c102b4fbe4529.otf",
     "static/media/building1.jpg": "/ons/static/media/building1.f91b4649e90c30ed273b.jpg",
@@ -16,12 +16,12 @@
     "static/media/logo-white.png": "/ons/static/media/logo-white.ef2b30ef7c6dba1edf9b.png",
     "static/media/logo.svg": "/ons/static/media/logo.488d65a6d7e380669aa5df916cdf9fcb.svg",
     "index.html": "/ons/index.html",
-    "main.733ada15.css.map": "/ons/static/css/main.733ada15.css.map",
-    "main.3627d70e.js.map": "/ons/static/js/main.3627d70e.js.map",
+    "main.ca59ed08.css.map": "/ons/static/css/main.ca59ed08.css.map",
+    "main.674b7540.js.map": "/ons/static/js/main.674b7540.js.map",
     "453.5565870f.chunk.js.map": "/ons/static/js/453.5565870f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.733ada15.css",
-    "static/js/main.3627d70e.js"
+    "static/css/main.ca59ed08.css",
+    "static/js/main.674b7540.js"
   ]
 }
