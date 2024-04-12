@@ -3,8 +3,7 @@ import React from 'react'
 import CloseIcon from '@mui/icons-material/Close';
 import './ContactForm.css'
 import TextField from '@mui/material/TextField';
-import { FormControl, FormLabel } from '@mui/material';
-import { Check } from '@mui/icons-material';
+import { FormControl } from '@mui/material';
 
 
 let textFieldStyle={
@@ -114,7 +113,7 @@ function handleSubmit()
                     sx={{mb: 3}}
                  />
                  <Box sx={{display:'flex', flexDirection:'row', alignItems:'center'}}>
-                    <Checkbox/>
+                    <Checkbox required/>
                     <p style={{fontSize:'10px'}}><a style={{cursor:"pointer", color:'#00448A', fontWeight:'800', textDecoration:'underline'}} onClick={openPrivacy}>개인정보 처리방침</a>에 동의합니다.</p>
                 </Box>
                  <Button sx={{mt:'2rem'}} variant="contained" color="primary" type="submit">접수</Button>
