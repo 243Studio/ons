@@ -57,7 +57,7 @@ function Location()
         <img style={{height:'25px', width:'auto', paddingRight:'1rem'}} src={location} ></img>
         <Typography color="text.tertiary" fontWeight={'bold'}   variant="h3">오시는길</Typography>
   </Box>
-      <iframe style={{width:'100%'}} src={googleMapLink}  height="400" className='map' loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+      <iframe style={{width:'100vw'}} src={googleMapLink}  height="400" className='map' loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
     </Box>
   )
 }

@@ -137,7 +137,7 @@ let pagesOptions = pageNames.map((pageName, index) => (
               }}
             >
               {pagesOptions}
-              <Button  sx={{bgcolor:'#00448A'}} size={'medium'} variant='contained' onClick={openContactForm}>
+              <Button  sx={{bgcolor:'#00448A', ml:'3rem'}} size={'medium'} variant='contained' onClick={openContactForm}>
                   <Typography  color={'white'} variant='h7'>문의하기</Typography>
               </Button>            
             </Box>

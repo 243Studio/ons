@@ -73,7 +73,7 @@ function ServiceItem({item, className}) {
 
 
   return (
-    <Grid className='service-container' container direction={{ xs:'column',sm:`${customDirection}` }} rowSpacing={{ xs:0 }} columnSpacing={{xs: 0, sm: 1, md: 0}} >
+    <Grid className='service-container' container direction={{ xs:'column-reverse',sm:`${customDirection}` }} rowSpacing={{ xs:0 }} columnSpacing={{xs: 0, sm: 1, md: 0}} >
       <Grid sx={textGridStyle} className={className}  item xs={12} sm={6} key={item.id}>
           <Box  sx={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
           <Typography className={`service-text-title ${textCustomPosition}`}  variant="h4">{item.title}</Typography>
