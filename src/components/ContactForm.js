@@ -42,28 +42,17 @@ export default function ContactForm({formIsOpen, closeForm, openPrivacy}) {
             return;
         }
         const formData = new FormData(formElement);
-        let data = {
-            name: name,
-            mail: email,
-            phoneNumber: phoneNumber,
-            message: message
-        }
-        console.log(data);
+
         fetch(googleSheetEndpoint3, {
-            redirect: "follow",
-            mode: 'no-cors',
             method: 'POST',
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
+            body: formData,
         })
         .then(resp => {
             
             if (!resp.ok) {
                 throw `Server error: [${resp.status}] [${resp.statusText}] [${resp.url}]`;
             }
-            return resp.json();
+            return resp;
         })
         .then(data => {
             console.log('Success:', data);
@@ -104,7 +93,7 @@ export default function ContactForm({formIsOpen, closeForm, openPrivacy}) {
             <Typography variant="h4" color="text.tertiary" sx={{textAlign:'center', margin:'1rem 0rem 3rem 0rem' }}>서비스의뢰</Typography>
         </Box>
         <Box className="form-container" sx={{width:{xs:'90%', md:'50%'}}}>
-        <form id="form" style={{width:'100%', maxWidth:'100%'}} autoComplete="off" onSubmit={handleSubmit}>
+        <form id="form" style={{width:'100%', maxWidth:'100%'}} autoComplete="on" onSubmit={handleSubmit}>
             <FormControl>
                 <TextField 
                     label="이름"
