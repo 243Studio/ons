@@ -43,9 +43,8 @@ function App() {
     <ThemeProvider theme={theme}>
     <div className="App">
         
-      <Header isOpen={isOpen} setIsOpen={setIsOpen} />
+      <Header isOpen={isOpen} setIsOpen={setIsOpen} openContactForm={openContactForm} />
       <Hero isOpen={isOpen}/>
-      <ResponsiveCard/>
       <CTA openContactForm = {openContactForm}/>
       <Location/>
       <Footer/>

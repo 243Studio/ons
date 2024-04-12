@@ -22,13 +22,13 @@ const images = [
   {
     "name":"building 1", 
     "link":building1,
-    "title": "OnS 는 Outsourcing 전문기업입니다", 
+    "title": "OnS는 국내 최초 아웃소싱 전문기업", 
     "content": "주식회사 오앤에스는 Outsourcing & Service 전문가인 사람들만을 모았기에 다양한 사업영역을 수행한 경험 속에서 축적한 노하우를 바탕으로 고객사와 지속적으로 소통하여 가장 좋은 선택지가 될 수 있는 비즈니스 플랜 서비스를 제시합니다"
   }, 
   {
     'name':"building 2", 
     "link":building2,
-    "title": "OnS 는 Outsourcing 전문기업입니다", 
+    "title": "약자로 전문적인 아웃소싱 서비스", 
     "content": "다양한 사업분야를 경험한 전문가 집단으로 우리의 일이 고객사와 근로자에게 더 나은 내일을 가져다 줄 것이라고 확신합니다. 내일을 아름답게 만드는 것은 끊임없는 노력이 있어야만 가능합니다. 빠르게 변화하는 글로벌 시장 속에서 뒤처지지 않기 위해 늘 먼저 움직이려 합니다. 정확한 분석과 타당한 근거를 바탕으로 여러분에게 새로운 길을 제시하겠습니다"
   }
 ]
@@ -49,37 +49,6 @@ function Hero({isOpen}) {
   }
   
 
-function ResponsiveCard(){
-
-  let CardList = businessAreaList.map((businessArea) => (
-    <Grid item xs={12} sm={6} md={4} lg={2} sx={{display:'flex', justifyContent:'center'}}>
-      <Card sx={{ flex:'1' }} >
-      <CardContent>
-        <img src={building1} style={{maxHeight:'90px', width:'auto'}} ></img><br/><br/>
-        <Typography variant="h7" color="text.tertiary" sx={{textAlign:'center', fontWeight:'800'}}>
-          {businessArea[0]}
-        </Typography>
-          <br/>
-        <ul style={{padding:'0px 15px'}}>
-          {businessArea[1].map((service) => (
-            <li style={{textAlign:'left', fontWeight:'500', fontSize:'small'}}>
-              {service}
-            </li> 
-          ))}
-        </ul>
-      </CardContent>
-      </Card>
-    </Grid>
-  ))
-  return(
-    <Box  sx ={{position:'relative', maxHeight:'max-content', minHeight:'50vh', display:'flex', flexDirection:'column', justifyContent:'flex-start',mb:'4rem', alignItems:'center'}}>
-      <Grid  sx={{marginTop:'1rem', maxWidth:'70%', maxHeight:'100%',  }} justifyContent="center" container spacing={2} rowSpacing={5}>
-      {CardList}
-      </Grid>
-    </Box>
-  )
-} 
-
 function Location()
 {
   return(
@@ -88,9 +57,9 @@ function Location()
         <img style={{height:'25px', width:'auto', paddingRight:'1rem'}} src={location} ></img>
         <Typography color="text.tertiary" fontWeight={'bold'}   variant="h3">오시는길</Typography>
   </Box>
-      <iframe style={{width:'100%'}} src={googleMapLink}  height="400" className='map' allowFullscreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+      <iframe style={{width:'100%'}} src={googleMapLink}  height="400" className='map' loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
     </Box>
   )
 }
 
-export {Hero, ResponsiveCard, Location}
+export {Hero, Location}

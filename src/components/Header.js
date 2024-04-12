@@ -24,7 +24,7 @@ const buttonStyle = {
   fontWeight: 'bold'
 }
 
-function Header() {
+function Header({openContactForm}) {
   const headerRef = React.useRef(null);
   const logoRef = React.useRef(null);
   const menuRef= React.useRef(null);
@@ -76,8 +76,9 @@ function Header() {
     }
 }
 
-let pagesOptions = pageNames.map((pageName) => (
+let pagesOptions = pageNames.map((pageName, index) => (
     <MenuItem
+        key={index}
         onClick={() => scrollToSection(pageName)}
         sx={{ py: '6px', pr: '8px' }}
       >
@@ -135,7 +136,10 @@ let pagesOptions = pageNames.map((pageName) => (
                 alignItems: 'center',paddingLeft:'40px'
               }}
             >
-                              {pagesOptions}
+              {pagesOptions}
+              <Button  sx={{bgcolor:'#00448A'}} size={'medium'} variant='contained' onClick={openContactForm}>
+                  <Typography  color={'white'} variant='h7'>문의하기</Typography>
+              </Button>            
             </Box>
             <Box sx={{ display: { sm: '', md: 'none' } }}>
               <Button
@@ -158,6 +162,9 @@ let pagesOptions = pageNames.map((pageName) => (
                 >
                   {pagesOptions}
                   <Divider />
+                  <Button  sx={{bgcolor:'#00448A'}} size={'medium'} variant='contained' onClick={openContactForm}>
+                    <Typography  color={'white'} variant='h7'>문의하기</Typography>
+                  </Button> 
                 </Box>
               </Drawer>
             </Box>

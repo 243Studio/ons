@@ -11,8 +11,6 @@
   flex-direction: column;
   text-align: center;
   box-sizing: border-box;
-  position:'relative';
-
 }
 #root.p{
   max-width:100%;

@@ -15,7 +15,7 @@ function Footer() {
                         연락처
                     </Typography>
                     <ul style={{textAlign:'left', color:'#00448A'}}>
-                        <li class="tel">+82-02-6474-4208</li>
+                        <li className="tel">+82-02-6474-4208</li>
                         <li>+82-10-4520-0449</li>
                     </ul>
                 </Grid>
