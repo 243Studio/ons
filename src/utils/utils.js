@@ -45,5 +45,7 @@ let businessAreaList = [
 ]
 
 
+let googleSheetEndpoint3= "https://script.google.com/macros/s/AKfycbzbkbR1OEMzsa9MCU4GBu6KvCEbWLBlMwoxbbmcWXk9Z7os7kN8C4RO6C0PzH7i9E4Q0Q/exec";
 
-export { googleMapLink, pageNames, businessAreaList }
+
+export { googleMapLink, pageNames, businessAreaList,googleSheetEndpoint3 }
