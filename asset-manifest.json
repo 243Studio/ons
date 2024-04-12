@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/ons/static/css/main.e8b1bf7f.css",
-    "main.js": "/ons/static/js/main.55f4fe69.js",
+    "main.css": "/ons/static/css/main.0280c5d5.css",
+    "main.js": "/ons/static/js/main.a2a96f54.js",
     "static/js/453.5565870f.chunk.js": "/ons/static/js/453.5565870f.chunk.js",
     "static/media/Adobe Myungjo Std M.otf": "/ons/static/media/Adobe Myungjo Std M.cea0458c102b4fbe4529.otf",
     "static/media/building1.jpg": "/ons/static/media/building1.f91b4649e90c30ed273b.jpg",
     "static/media/building2.jpg": "/ons/static/media/building2.2b33eedf73145f104ca7.jpg",
     "static/media/handshake.jpg": "/ons/static/media/handshake.eb8bde19a850ae6b3a03.jpg",
-    "static/media/dispatch3.png": "/ons/static/media/dispatch3.658e1f2a7bce120d7d44.png",
-    "static/media/dispatch1.png": "/ons/static/media/dispatch1.66cce8120712dcdec494.png",
-    "static/media/dispatch2.png": "/ons/static/media/dispatch2.685d4990480cb8ba0ff2.png",
+    "static/media/sales.jpg": "/ons/static/media/sales.12a1cbb4a9db98e650a3.jpg",
+    "static/media/hr.jpg": "/ons/static/media/hr.a48bd895107eef862412.jpg",
+    "static/media/call.jpg": "/ons/static/media/call.d1ef67a46258e9835809.jpg",
+    "static/media/facility.jpg": "/ons/static/media/facility.cefeeb9cbc59742bfe65.jpg",
+    "static/media/logistics.jpg": "/ons/static/media/logistics.97defae8e48d63556b60.jpg",
     "static/media/service2.png": "/ons/static/media/service2.95b466d68e29dbd65a30.png",
     "static/media/service1.png": "/ons/static/media/service1.c82243794eb88dad5694.png",
     "static/media/location.png": "/ons/static/media/location.64cdcb0ef97818161310.png",
@@ -18,12 +20,12 @@
     "static/media/logo.svg": "/ons/static/media/logo.488d65a6d7e380669aa5df916cdf9fcb.svg",
     "index.html": "/ons/index.html",
     "static/media/okay.svg": "/ons/static/media/okay.befba6d4c6b140647e7847b353c1356d.svg",
-    "main.e8b1bf7f.css.map": "/ons/static/css/main.e8b1bf7f.css.map",
-    "main.55f4fe69.js.map": "/ons/static/js/main.55f4fe69.js.map",
+    "main.0280c5d5.css.map": "/ons/static/css/main.0280c5d5.css.map",
+    "main.a2a96f54.js.map": "/ons/static/js/main.a2a96f54.js.map",
     "453.5565870f.chunk.js.map": "/ons/static/js/453.5565870f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e8b1bf7f.css",
-    "static/js/main.55f4fe69.js"
+    "static/css/main.0280c5d5.css",
+    "static/js/main.a2a96f54.js"
   ]
 }
