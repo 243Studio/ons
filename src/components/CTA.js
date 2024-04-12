@@ -5,7 +5,7 @@ import handshake from '../assets/img/photos/handshake.jpg'
 export default function CTA({openContactForm}) {
   return (
     <Box id="문의하기" sx={{position:'relative', maxHeight:'60vh', height:'60vh', width:'100vw'}}>
-        <img style={{height:'100%', width:'100%', objectFit:'cover'}} src={handshake}/>
+        <img style={{height:'100%', width:'100%', objectFit:'cover'}} alt={`${handshake}`} src={handshake}/>
         <Box sx={{position:'absolute', top:'0%', left:'0%', height:'100%', width:'100%', bgcolor: 'rgba(0,0,0,0.8)'}} />
         <Box sx={{display:'flex', justifyContent:'center', alignItems:'center', position:'absolute', top:'0%', left:'0%', height:'100%', width:'100%', flexDirection:'column'}}>
             <Box sx={{height: '40%', width:{xs: '85%', md:'50%'}, display:'flex', flexDirection:'column', justifyContent:'space-between', alignItems:'center'}}>

@@ -6,7 +6,7 @@ function Footer() {
         <Box className='footer-container' sx={{display:'flex', maxWidth:'80vw', justifyContent:'center', alignItems:'center', mx:'auto', width:'60%', height:'max-content'}} >
             <Grid container rowSpacing={{xs:'4rem'}} spacing={2} sx={{display:'flex', mx:'auto', justifyContent:'space-between', alignItems:'center'}}>
                 <Grid sx={{pt:'3rem', display:'flex', flexDirection:'column', alignItems:'center'}} item xs={12} sm={6}>
-                    <img src={logo} style={{maxWidth:'4rem'}} className='footer-col'/>
+                    <img alt={`${logo}`} src={logo} style={{maxWidth:'4rem'}} className='footer-col'/>
                     <Typography variant="h6" color="text.tertiary" sx={{textAlign:'left', my:'1rem', fontWeight:'800'}}>주식회사 오앤에스</Typography>
 
                 </Grid>

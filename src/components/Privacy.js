@@ -2,7 +2,7 @@ import { Box, IconButton, Typography } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close';
 import React from 'react'
 
-export default function ({privacyIsOpen, closePrivacy}) {
+export default function Privacy ({privacyIsOpen, closePrivacy}) {
   return (
     privacyIsOpen && (<Box sx={{position:'fixed', top:'0%', left:'0', width:'100%', height:'100%', pt:'5%', bgcolor:'white', zIndex:'5000',flexDirection:'column', display:'flex',  alignItems:'center'}}>
         <IconButton 

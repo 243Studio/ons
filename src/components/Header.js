@@ -12,7 +12,6 @@ import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import { pageNames } from '../utils/utils';
-import { withTheme } from '@emotion/react';
 
 
 const logoStyle = {

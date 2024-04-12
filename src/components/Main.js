@@ -5,18 +5,13 @@ import * as React from 'react';
 import building1 from '../assets/img/building1.jpg';
 import building2 from '../assets/img/building2.jpg';
 import Typography from '@mui/material/Typography';
-import { businessAreaList } from '../utils/utils';
-import { Box, CardContent, Card, Grid, } from '@mui/material';
+import { Box } from '@mui/material';
 import { CustomCarousel } from './Carousel';
 import service1 from '../assets/img/icons/service1.png';
 import service2 from '../assets/img/icons/service2.png';
 import service3 from '../assets/img/icons/service3.png';
 import Services from './Services';
 import location from '../assets/img/icons/location.png';
-import logoResponsive from '../assets/img/logo/logo-responsive.png';
-
-
-
 
 const images = [
   {
@@ -39,9 +34,9 @@ function Hero({isOpen}) {
     <Box id="회사소개" className={`hero ${isOpen ? 'dropdown-open' : ''}`}>
             <CustomCarousel items={images} />
             <Box className="illust-container">
-              <img  id="illust1" src={service1} />
-              <img  id="illust2" src={service2} />
-              <img  id="illust3" src={service3} />
+              <img alt={`${service1}`}  id="illust1" src={service1} />
+              <img alt={`${service2}`}  id="illust2" src={service2} />
+              <img alt={`${service3}`}  id="illust3" src={service3} />
             </Box>
             <Services />
       </Box>
@@ -54,10 +49,10 @@ function Location()
   return(
     <Box id="오시는길" sx={{maxWidth:'100vw', display:'flex', flexDirection:'column', justifyContent:"flex-start", alignItems:'center', }}>
       <Box my={{xs:'0.5rem', md:'2rem' }} sx={{ display:'flex', pt:'5rem',justifyContent:'center', alignItems:'center'}} >
-        <img style={{height:'35px', width:'auto', paddingRight:'1rem'}} src={location} ></img>
+        <img alt={`${location}`} style={{height:'35px', width:'auto', paddingRight:'1rem'}} src={location} ></img>
         <Typography color="text.tertiary" fontWeight={'bold'}   variant="h3">오시는길</Typography>
   </Box>
-      <iframe style={{width:'100vw'}} src={googleMapLink}  height="400" className='map' loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+      <iframe title='google-map' style={{width:'100vw'}} src={googleMapLink}  height="400" className='map' loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
     </Box>
   )
 }
