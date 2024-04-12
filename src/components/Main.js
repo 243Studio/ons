@@ -54,7 +54,7 @@ function Location()
   return(
     <Box id="오시는길" sx={{maxWidth:'100vw', display:'flex', flexDirection:'column', justifyContent:"flex-start", alignItems:'center', }}>
       <Box my={{xs:'0.5rem', md:'2rem' }} sx={{ display:'flex', pt:'5rem',justifyContent:'center', alignItems:'center'}} >
-        <img style={{height:'25px', width:'auto', paddingRight:'1rem'}} src={location} ></img>
+        <img style={{height:'35px', width:'auto', paddingRight:'1rem'}} src={location} ></img>
         <Typography color="text.tertiary" fontWeight={'bold'}   variant="h3">오시는길</Typography>
   </Box>
       <iframe style={{width:'100vw'}} src={googleMapLink}  height="400" className='map' loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>

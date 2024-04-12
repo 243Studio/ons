@@ -11,7 +11,7 @@ export default function CTA({openContactForm}) {
             <Box sx={{height: '40%', width:{xs: '85%', md:'50%'}, display:'flex', flexDirection:'column', justifyContent:'space-between', alignItems:'center'}}>
                 <Typography  color={'white'} variant='h4'>지금 바로 클릭하여 우리에게 연락해 주세요. 함께 최적의 비즈니스 플랜을 구상해 나갈 수 있습니다.</Typography>
                 <Button  sx={{bgcolor:'#00448A'}} size={'large'} variant='contained' onClick={openContactForm}>
-                    <Typography  color={'white'} variant='h4'>문의하기</Typography>
+                    <Typography  color={'white'} variant='h4'>서비스의뢰</Typography>
                 </Button>
             </Box>
         </Box>

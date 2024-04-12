@@ -6,6 +6,7 @@ import { Footer } from './components/Footer.js';
 import { ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material';
 import CTA from './components/CTA.js';
 import ContactForm from './components/ContactForm.js';
+import Privacy from './components/Privacy.js';
 
 let theme = createTheme({
     typography: {
@@ -24,8 +25,8 @@ let theme = createTheme({
     },
   palette: {
     text: {
-      primary: '#000000',
-      secondary: '#ffffff',
+      primary:'#000000' ,
+      white:'#ffffff',
       tertiary: '#00448A',
     },
     
@@ -35,9 +36,14 @@ theme = responsiveFontSizes(theme);
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
+  const [formIsOpen, setFormIsOpen] = useState(false);
+  const [privacyIsOpen, setPrivacyIsOpen] = useState(false);
 
   function openContactForm(){
-    console.log('open contact form');
+    setFormIsOpen(!formIsOpen);
+  }
+  function openPrivacy(){
+    setPrivacyIsOpen(!privacyIsOpen);
   }
   return (
     <ThemeProvider theme={theme}>
@@ -48,8 +54,9 @@ function App() {
       <CTA openContactForm = {openContactForm}/>
       <Location/>
       <Footer/>
-      {//<ContactForm/>
-      }
+      <ContactForm formIsOpen = {formIsOpen} closeForm={openContactForm} openPrivacy={openPrivacy}/>
+      <Privacy privacyIsOpen={privacyIsOpen} closePrivacy={openPrivacy}/>
+
     </div>
     </ThemeProvider>
   )

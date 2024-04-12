@@ -78,7 +78,7 @@ function Item({item})
                 <Typography 
                     className='carousel-text' 
                     variant="h5" 
-                    color="text.secondary" 
+                    color="text.white" 
                     sx={{ width:{
                             xs:'100%',
                             md:'80%'
