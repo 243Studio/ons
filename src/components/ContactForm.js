@@ -51,6 +51,7 @@ export default function ContactForm({formIsOpen, closeForm, openPrivacy}) {
         console.log(data);
         fetch(googleSheetEndpoint3, {
             redirect: "follow",
+            mode: 'no-cors',
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
