@@ -28,3 +28,6 @@ yarn-error.log*
 *.ai
 *.pdf
 코리아플러스파워.*
+
+#api keys
+.env
