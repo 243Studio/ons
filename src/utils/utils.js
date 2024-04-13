@@ -51,10 +51,13 @@ function hideBodyOverflow(privacyIsOpen){
         document.body.style.overflowY = 'unset'
       }
 }
+function closeDrawer(value){
+    return value && !value
+}
 let googleSheetEndpoint3= "https://script.google.com/macros/s/AKfycbyvuh06T33pdiBbUbL0oGikA_qOzwIJQhNm5RnzoSUck0vatpRLz8YTedZzV46HvXigqQ/exec";
 
 function removeQueryData(){
     window.history.pushState(null, "", window.location.href.split("?")[0]);
 }
 
-export { googleMapLink, pageNames, businessAreaList,googleSheetEndpoint3, removeQueryData, hideBodyOverflow }
+export { googleMapLink, pageNames, businessAreaList,googleSheetEndpoint3, removeQueryData, hideBodyOverflow, closeDrawer }

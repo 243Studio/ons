@@ -5,12 +5,12 @@ import './ContactForm.css'
 import TextField from '@mui/material/TextField';
 import { FormControl } from '@mui/material';
 import { useSnackbar } from 'notistack';
-import { googleSheetEndpoint3, hideBodyOverflow, removeQueryData } from '../utils/utils';
+import { closeDrawer, googleSheetEndpoint3, hideBodyOverflow, removeQueryData } from '../utils/utils';
 
 let textFieldStyle={
     width:'100%',
 }
-export default function ContactForm({formIsOpen, closeForm, openPrivacy}) {
+export default function ContactForm({formIsOpen, closeForm, isOpen, openPrivacy}) {
     
    
     
@@ -31,6 +31,7 @@ export default function ContactForm({formIsOpen, closeForm, openPrivacy}) {
 
       useEffect(() => {
         hideBodyOverflow(formIsOpen)
+        closeDrawer(isOpen)
       }, [formIsOpen])
     function handleSubmit(e)
     {   
@@ -54,7 +55,6 @@ export default function ContactForm({formIsOpen, closeForm, openPrivacy}) {
             body: formData,
         })
         .then((res) => {
-            console.log(res.body);
             handleClickVariant('success');            
         }).catch((error) => {
             console.error('Error:', error);
@@ -67,7 +67,7 @@ export default function ContactForm({formIsOpen, closeForm, openPrivacy}) {
 
   return (
     formIsOpen && (
-    <Box sx={{ paddingTop:'1rem', position:"fixed", height:'100vh', width:'100vw', bgcolor:'white', zIndex:'6000', display:'flex', alignItems:'center', flexDirection:'column'}} className="contact-form-container">
+    <Box sx={{ paddingTop:'1rem', position:"fixed", height:'100vh', width:'100vw', bgcolor:'white', zIndex:'30000', display:'flex', alignItems:'center', flexDirection:'column'}} className="contact-form-container">
         <IconButton 
         sx={{
             position:{xs:'static', md:'absolute'}, 

@@ -59,13 +59,13 @@ function App() {
     <SnackbarProvider maxSnack={3}>
       <ThemeProvider theme={theme}>
       <div className="App">
-        <ContactForm formIsOpen = {formIsOpen} drawerState={isOpen} closeForm={openContactForm} openPrivacy={openPrivacy}/>
-        <Privacy privacyIsOpen={privacyIsOpen} openPrivacy={openPrivacy} closePrivacy={closePrivacy}/>
         <Header isOpen={isOpen} setIsOpen={setIsOpen} openContactForm={openContactForm} />
         <Hero isOpen={isOpen}/>
         <CTA openContactForm = {openContactForm}/>
         <Location/>
         <Footer/>
+        <ContactForm formIsOpen = {formIsOpen} isOpen={isOpen} closeForm={openContactForm} openPrivacy={openPrivacy}/>
+        <Privacy privacyIsOpen={privacyIsOpen} openPrivacy={openPrivacy} closePrivacy={closePrivacy}/>
 
       </div>
       </ThemeProvider>
