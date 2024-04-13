@@ -44,8 +44,17 @@ let businessAreaList = [
     
 ]
 
+function hideBodyOverflow(privacyIsOpen){
+    if (privacyIsOpen) {
+        document.body.style.overflowY = 'hidden'
+      } else {
+        document.body.style.overflowY = 'unset'
+      }
+}
+let googleSheetEndpoint3= "https://script.google.com/macros/s/AKfycbyvuh06T33pdiBbUbL0oGikA_qOzwIJQhNm5RnzoSUck0vatpRLz8YTedZzV46HvXigqQ/exec";
 
-let googleSheetEndpoint3= "https://script.google.com/macros/s/AKfycbyKx0lrEMD1yd7k0nryS7n9dbumiAZZZ98iz1kcCLvUC5bmsDgZxHUNc3YaVtYCbcSZoA/exec";
+function removeQueryData(){
+    window.history.pushState(null, "", window.location.href.split("?")[0]);
+}
 
-
-export { googleMapLink, pageNames, businessAreaList,googleSheetEndpoint3 }
+export { googleMapLink, pageNames, businessAreaList,googleSheetEndpoint3, removeQueryData, hideBodyOverflow }
