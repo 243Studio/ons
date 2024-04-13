@@ -51,9 +51,8 @@ export default function ContactForm({formIsOpen, closeForm, isOpen, openPrivacy}
             body: formData,
             crossDomain: true,
         })
-        .then((res) => {
-            handleClickVariant('success');            
-        })
+
+        handleClickVariant('success');            
         closeForm()
         removeQueryData();
         
@@ -126,7 +125,7 @@ export default function ContactForm({formIsOpen, closeForm, isOpen, openPrivacy}
                     variant="outlined"
                     color="primary"
                     size='small'
-                    type="phone"
+                    type="tel"
                     value={phoneNumber}
                     error={phoneError}
                     fullWidth
