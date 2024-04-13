@@ -10,10 +10,9 @@ import { googleSheetEndpoint3, hideBodyOverflow, removeQueryData } from '../util
 let textFieldStyle={
     width:'100%',
 }
-export default function ContactForm({formIsOpen, closeForm, drawerState, openPrivacy}) {
+export default function ContactForm({formIsOpen, closeForm, openPrivacy}) {
     
    
-    let closeDrawer = (state)=>(state &&!state);
     
     const { enqueueSnackbar } = useSnackbar();
     const [name, setName] = React.useState('');
@@ -32,7 +31,7 @@ export default function ContactForm({formIsOpen, closeForm, drawerState, openPri
 
       useEffect(() => {
         hideBodyOverflow(formIsOpen)
-      }, [formIsOpen, drawerState])
+      }, [formIsOpen])
     function handleSubmit(e)
     {   
         const formElement = document.getElementById('form');
@@ -62,14 +61,13 @@ export default function ContactForm({formIsOpen, closeForm, drawerState, openPri
             handleClickVariant('error');
         });
         closeForm()
-        closeDrawer(drawerState)
         removeQueryData();
         
     }
 
   return (
     formIsOpen && (
-    <Box sx={{ paddingTop:'1rem', position:"fixed", height:'100vh', width:'100vw', bgcolor:'white', zIndex:'3000', display:'flex', alignItems:'center', flexDirection:'column'}} className="contact-form-container">
+    <Box sx={{ paddingTop:'1rem', position:"fixed", height:'100vh', width:'100vw', bgcolor:'white', zIndex:'6000', display:'flex', alignItems:'center', flexDirection:'column'}} className="contact-form-container">
         <IconButton 
         sx={{
             position:{xs:'static', md:'absolute'}, 
@@ -81,7 +79,6 @@ export default function ContactForm({formIsOpen, closeForm, drawerState, openPri
             display:'flex',
             justifyContent:'center',
             alignItems:'center',
-            border:'1px solid black',
             marginBottom:'1rem'
         }}
         size='small'

@@ -11,7 +11,7 @@ function CustomCarousel({items})
         indicatorContainerProps={{
             style: {
                 position:'absolute',
-                zIndex: '100',
+                zIndex: '5',
                 top:'92%',
                 textAlign: 'center',
                 display: 'flex',

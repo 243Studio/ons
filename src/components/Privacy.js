@@ -3,7 +3,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import React, { useEffect } from 'react'
 import { hideBodyOverflow } from '../utils/utils';
 
-export default function Privacy ({privacyIsOpen, closePrivacy}) {
+export default function Privacy ({privacyIsOpen, closeContactForm, closePrivacy}) {
 
   useEffect(() => {
     hideBodyOverflow(privacyIsOpen)
@@ -26,7 +26,6 @@ export default function Privacy ({privacyIsOpen, closePrivacy}) {
             marginBottom:'1rem',
             
         }}
-        disableElevation
         size='small'
         color='primary'
         variant="outlined" 
@@ -37,9 +36,9 @@ export default function Privacy ({privacyIsOpen, closePrivacy}) {
             <CloseIcon id='close-icon' sx={{color:'black'}}/>
             </IconButton>
         <Typography variant="h4" color="text.primary" sx={{textAlign:'center', margin:'3rem 0rem 3rem 0rem', fontWeight:'800' }}>개인정보 처리방침</Typography>
-        <hr style={{width:'70%', height:'3px', color:'red', zIndex:'6000'}}/>  
+        <hr style={{width:'70%', height:'3px', color:'red'}}/>  
         <Box sx={{mt:'2rem', mb:'6rem', width:'85%', textAlign:'justify', display:'flex', flexDirection:'column', justifyContent:'center' , alignItems:'center' }}>
-          <Box class="member_wrapper">
+          <Box className="member_wrapper">
           <Box sx={{fontSize:'12px'}}className="privacy_body">
               <b>1. 개인정보의 처리 목적</b><br/><br/>
               (주) 오앤에스는 이하 '(주) 오앤에스 웹 사이트')은(는) 개인정보를 다음의 목적을 위해 처리합니다. 처리한 개인정보는 다음의 목적이외의 용도로는 사용되지 않으며 이용 목적이 변경될 시에는 사전동의를 구할 예정입니다.<br/>

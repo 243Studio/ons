@@ -43,16 +43,25 @@ function App() {
   function openContactForm(){
     setFormIsOpen(!formIsOpen);
   }
+  function closeContactForm(value)
+  {
+    setFormIsOpen(!value);
+  }
+  function closePrivacy(){
+    setFormIsOpen(true)
+    setPrivacyIsOpen(false)
+  }
   function openPrivacy(){
-    setPrivacyIsOpen(!privacyIsOpen);
+    setFormIsOpen(false)
+    setPrivacyIsOpen(true);
   }
   return (
     <SnackbarProvider maxSnack={3}>
       <ThemeProvider theme={theme}>
       <div className="App">
-        <Privacy privacyIsOpen={privacyIsOpen} closePrivacy={openPrivacy}/>
         <ContactForm formIsOpen = {formIsOpen} drawerState={isOpen} closeForm={openContactForm} openPrivacy={openPrivacy}/>
-        <Header isOpen={isOpen} setIsOpen={isOpen} openContactForm={openContactForm} />
+        <Privacy privacyIsOpen={privacyIsOpen} openPrivacy={openPrivacy} closePrivacy={closePrivacy}/>
+        <Header isOpen={isOpen} setIsOpen={setIsOpen} openContactForm={openContactForm} />
         <Hero isOpen={isOpen}/>
         <CTA openContactForm = {openContactForm}/>
         <Location/>
