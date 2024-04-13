@@ -23,17 +23,20 @@ const buttonStyle = {
   fontWeight: 'bold'
 }
 
-function Header({openContactForm}) {
+function Header({openContactForm, opClose, isOpen}) {
   const headerRef = React.useRef(null);
   const logoRef = React.useRef(null);
   const menuRef= React.useRef(null);
 
-  const [open, setOpen] = React.useState(false);
+  //const [open, setOpen] = React.useState(false);
 
   const toggleDrawer = (newOpen) => () => {
-    setOpen(newOpen);
+        opClose(newOpen)
+      }
+  function didi(){
+    opClose(false)
+    openContactForm()
   }
-  
   
   React.useEffect(() => {
     let handleScroll = () => {
@@ -71,7 +74,7 @@ function Header({openContactForm}) {
         top: targetScroll,
         behavior: 'smooth',
       });
-      setOpen(false);
+      opClose(false);
     }
 }
 
@@ -150,7 +153,7 @@ let pagesOptions = pageNames.map((pageName, index) => (
               >
                 <MenuIcon ref={menuRef} sx={{color:'white'}} />
               </Button>
-              <Drawer anchor="right"  open={open} onClose={toggleDrawer(false)}>
+              <Drawer anchor="right"  open={isOpen} onClose={toggleDrawer(false)}>
                 <Box
                   sx={{
                     minWidth: '60dvw',
@@ -161,7 +164,7 @@ let pagesOptions = pageNames.map((pageName, index) => (
                 >
                   {pagesOptions}
                   <Divider />
-                  <Button  sx={{bgcolor:'#00448A'}} size={'medium'} variant='contained' onClick={openContactForm}>
+                  <Button  sx={{bgcolor:'#00448A'}} size={'medium'} variant='contained' onClick={didi}>
                     <Typography  color={'white'} variant='h7'>서비스의뢰</Typography>
                   </Button> 
                 </Box>

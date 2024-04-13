@@ -5,7 +5,7 @@ import './ContactForm.css'
 import TextField from '@mui/material/TextField';
 import { FormControl } from '@mui/material';
 import { useSnackbar } from 'notistack';
-import { closeDrawer, googleSheetEndpoint3, hideBodyOverflow, removeQueryData } from '../utils/utils';
+import { googleSheetEndpoint3, hideBodyOverflow, removeQueryData } from '../utils/utils';
 
 let textFieldStyle={
     width:'100%',
@@ -31,7 +31,6 @@ export default function ContactForm({formIsOpen, closeForm, isOpen, openPrivacy}
 
       useEffect(() => {
         hideBodyOverflow(formIsOpen)
-        closeDrawer(isOpen)
       }, [formIsOpen])
     function handleSubmit(e)
     {   
@@ -53,6 +52,7 @@ export default function ContactForm({formIsOpen, closeForm, isOpen, openPrivacy}
         fetch(googleSheetEndpoint3, {
             method: 'POST',
             body: formData,
+            crossDomain: true,
         })
         .then((res) => {
             handleClickVariant('success');            
@@ -67,7 +67,7 @@ export default function ContactForm({formIsOpen, closeForm, isOpen, openPrivacy}
 
   return (
     formIsOpen && (
-    <Box sx={{ paddingTop:'1rem', position:"fixed", height:'100vh', width:'100vw', bgcolor:'white', zIndex:'30000', display:'flex', alignItems:'center', flexDirection:'column'}} className="contact-form-container">
+    <Box sx={{ paddingTop:'1rem', position:"fixed", height:'100vh', width:'100vw', bgcolor:'white', zIndex:'3000', display:'flex', alignItems:'center', flexDirection:'column'}} className="contact-form-container">
         <IconButton 
         sx={{
             position:{xs:'static', md:'absolute'}, 
@@ -92,11 +92,10 @@ export default function ContactForm({formIsOpen, closeForm, isOpen, openPrivacy}
             <Typography variant="h4" color="text.tertiary" sx={{textAlign:'center', margin:'1rem 0rem 3rem 0rem' }}>서비스의뢰</Typography>
         </Box>
         <Box className="form-container" sx={{width:{xs:'90%', md:'50%'}}}>
-        <form id="form" style={{width:'100%', maxWidth:'100%'}} autoComplete="on" onSubmit={handleSubmit}>
+        <form id="form" style={{width:'100%', maxWidth:'100%'}} autoComplete="off" onSubmit={handleSubmit}>
             <FormControl>
                 <TextField 
                     label="이름"
-                    placeholder='이름을 입력해주세요'
                     onChange={e => setName(e.target.value)}
                     required
                     variant="outlined"
@@ -158,7 +157,7 @@ export default function ContactForm({formIsOpen, closeForm, isOpen, openPrivacy}
                     <Checkbox required/>
                     <p style={{fontSize:'10px'}}><span href="#" style={{cursor:"pointer", color:'#00448A', fontWeight:'800', textDecoration:'underline'}} onClick={openPrivacy}>개인정보 처리방침</span>에 동의합니다.</p>
                 </Box>
-                 <Button sx={{bagcolor:'#00448A'}} variant="contained" type="submit">접수</Button>
+                 <Button sx={{bgcolor:'#00448A'}} variant="contained" type="submit">접수</Button>
             </FormControl>
         </form>
         </Box>
