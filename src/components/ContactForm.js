@@ -23,10 +23,7 @@ export default function ContactForm({formIsOpen, closeForm, isOpen, openPrivacy}
     const [phoneError, setPhoneError] = React.useState(false);
 
     const handleClickVariant = (variant) => {
-
-        enqueueSnackbar((variant === "success")
-        ?"접수가 완료되었습니다. 감사합니다."
-        :"접수에 실패했습니다. 다시 시도해주세요.", { variant });
+        enqueueSnackbar("접수가 완료되었습니다. 감사합니다.", { variant });
       };
 
       useEffect(() => {
@@ -56,10 +53,7 @@ export default function ContactForm({formIsOpen, closeForm, isOpen, openPrivacy}
         })
         .then((res) => {
             handleClickVariant('success');            
-        }).catch((error) => {
-            console.error('Error:', error);
-            handleClickVariant('error');
-        });
+        })
         closeForm()
         removeQueryData();
         
