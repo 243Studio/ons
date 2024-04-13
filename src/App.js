@@ -7,6 +7,7 @@ import { ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material';
 import CTA from './components/CTA.js';
 import ContactForm from './components/ContactForm.js';
 import Privacy from './components/Privacy.js';
+import { SnackbarProvider } from 'notistack';
 
 let theme = createTheme({
     typography: {
@@ -46,19 +47,20 @@ function App() {
     setPrivacyIsOpen(!privacyIsOpen);
   }
   return (
-    <ThemeProvider theme={theme}>
-    <div className="App">
-        
-      <Header isOpen={isOpen} setIsOpen={setIsOpen} openContactForm={openContactForm} />
-      <Hero isOpen={isOpen}/>
-      <CTA openContactForm = {openContactForm}/>
-      <Location/>
-      <Footer/>
-      <ContactForm formIsOpen = {formIsOpen} closeForm={openContactForm} openPrivacy={openPrivacy}/>
-      <Privacy privacyIsOpen={privacyIsOpen} closePrivacy={openPrivacy}/>
+    <SnackbarProvider maxSnack={3}>
+      <ThemeProvider theme={theme}>
+      <div className="App">
+        <Privacy privacyIsOpen={privacyIsOpen} closePrivacy={openPrivacy}/>
+        <ContactForm formIsOpen = {formIsOpen} drawerState={isOpen} closeForm={openContactForm} openPrivacy={openPrivacy}/>
+        <Header isOpen={isOpen} setIsOpen={isOpen} openContactForm={openContactForm} />
+        <Hero isOpen={isOpen}/>
+        <CTA openContactForm = {openContactForm}/>
+        <Location/>
+        <Footer/>
 
-    </div>
-    </ThemeProvider>
+      </div>
+      </ThemeProvider>
+    </SnackbarProvider>
   )
 }
 
