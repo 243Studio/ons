@@ -1,16 +1,19 @@
 import { Box, Typography, Button, IconButton, Checkbox } from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react'
 import CloseIcon from '@mui/icons-material/Close';
 import './ContactForm.css'
 import TextField from '@mui/material/TextField';
 import { FormControl } from '@mui/material';
 import { useSnackbar } from 'notistack';
-import { googleSheetEndpoint3 } from '../utils/utils';
+import { googleSheetEndpoint3, hideBodyOverflow, removeQueryData } from '../utils/utils';
 
 let textFieldStyle={
     width:'100%',
 }
-export default function ContactForm({formIsOpen, closeForm, openPrivacy}) {
+export default function ContactForm({formIsOpen, closeForm, drawerState, openPrivacy}) {
+    
+   
+    let closeDrawer = (state)=>(state &&!state);
     
     const { enqueueSnackbar } = useSnackbar();
     const [name, setName] = React.useState('');
@@ -19,16 +22,19 @@ export default function ContactForm({formIsOpen, closeForm, openPrivacy}) {
     const [message, setMessage] = React.useState('');
     const [emailError, setEmailError] = React.useState(false);
     const [phoneError, setPhoneError] = React.useState(false);
-    
-    const handleClickVariant = (variant) => () => {
 
-        // variant could be success, error, warning, info, or default
+    const handleClickVariant = (variant) => {
+
         enqueueSnackbar((variant === "success")
         ?"접수가 완료되었습니다. 감사합니다."
         :"접수에 실패했습니다. 다시 시도해주세요.", { variant });
       };
+
+      useEffect(() => {
+        hideBodyOverflow(formIsOpen)
+      }, [formIsOpen, drawerState])
     function handleSubmit(e)
-    {
+    {   
         const formElement = document.getElementById('form');
         e.preventDefault();
         if(email.length < 1)
@@ -43,31 +49,27 @@ export default function ContactForm({formIsOpen, closeForm, openPrivacy}) {
         }
         const formData = new FormData(formElement);
 
+
         fetch(googleSheetEndpoint3, {
             method: 'POST',
             body: formData,
         })
-        .then(resp => {
-            
-            if (!resp.ok) {
-                throw `Server error: [${resp.status}] [${resp.statusText}] [${resp.url}]`;
-            }
-            return resp;
-        })
-        .then(data => {
-            console.log('Success:', data);
-            //closeForm()
-            //handleClickVariant('success');
+        .then((res) => {
+            console.log(res.body);
+            handleClickVariant('success');            
         }).catch((error) => {
             console.error('Error:', error);
             handleClickVariant('error');
         });
+        closeForm()
+        closeDrawer(drawerState)
+        removeQueryData();
         
     }
 
   return (
-    formIsOpen && (<Box sx={{ paddingTop:'2rem', position:"fixed", overflow:'hidden', height:'100vh', width:'100vw', bgcolor:'white', zIndex:'3000', display:'flex', alignItems:'center', flexDirection:'column'}} className="contact-form-container">
-        <Box ></Box>
+    formIsOpen && (
+    <Box sx={{ paddingTop:'1rem', position:"fixed", height:'100vh', width:'100vw', bgcolor:'white', zIndex:'3000', display:'flex', alignItems:'center', flexDirection:'column'}} className="contact-form-container">
         <IconButton 
         sx={{
             position:{xs:'static', md:'absolute'}, 
@@ -107,7 +109,7 @@ export default function ContactForm({formIsOpen, closeForm, openPrivacy}) {
                     name="name"
                     sx={{...textFieldStyle,mb: 3}}
                     fullWidth
-                    value={name}
+                    defaultValue={name}
                  />
                  <TextField 
                     label="이메일 주소"
@@ -145,7 +147,7 @@ export default function ContactForm({formIsOpen, closeForm, openPrivacy}) {
                     label="문의 사항"
                     onChange={e => setMessage(e.target.value)}
                     multiline
-                    rows={10}
+                    rows={6}
                     required
                     variant="outlined"
                     color="primary"
@@ -159,7 +161,7 @@ export default function ContactForm({formIsOpen, closeForm, openPrivacy}) {
                     <Checkbox required/>
                     <p style={{fontSize:'10px'}}><span href="#" style={{cursor:"pointer", color:'#00448A', fontWeight:'800', textDecoration:'underline'}} onClick={openPrivacy}>개인정보 처리방침</span>에 동의합니다.</p>
                 </Box>
-                 <Button sx={{mt:'2rem'}} variant="contained" color="primary" type="submit">접수</Button>
+                 <Button sx={{bagcolor:'#00448A'}} variant="contained" type="submit">접수</Button>
             </FormControl>
         </form>
         </Box>
