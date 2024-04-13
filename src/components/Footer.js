@@ -4,13 +4,13 @@ function Footer() {
     return (
         <footer id="연락처" className='footer-wrap' >
         <Box className='footer-container' sx={{display:'flex', maxWidth:'80vw', justifyContent:'center', alignItems:'center', mx:'auto', width:'60%', height:'max-content'}} >
-            <Grid container rowSpacing={{xs:'4rem'}} spacing={2} sx={{display:'flex', mx:'auto', justifyContent:'space-between', alignItems:'center'}}>
-                <Grid sx={{pt:'3rem', display:'flex', flexDirection:'column', alignItems:'center'}} item xs={12} sm={6}>
+            <Grid container rowSpacing={{xs:'4rem'}} sx={{display:'flex', mx:'auto', justifyContent:'space-between', alignItems:'center'}}>
+                <Grid sx={{ display:'flex', flexDirection:'column', alignItems:'center'}} item xs={12} sm={6}>
                     <img alt={`${logo}`} src={logo} style={{maxWidth:'4rem'}} className='footer-col'/>
                     <Typography variant="h6" color="text.tertiary" sx={{textAlign:'left', my:'1rem', fontWeight:'800'}}>주식회사 오앤에스</Typography>
 
                 </Grid>
-                <Grid sx={{pt:'3rem', display:'flex', flexDirection:'column', alignItems:'center'}} item xs={12} sm={6}>
+                <Grid sx={{ display:'flex', flexDirection:'column', alignItems:'center'}} item xs={12} sm={6}>
                     <Typography variant="h5" color="text.tertiary" sx={{textAlign:'justify', marginBottom:'1rem', fontWeight:'800'}}>
                         연락처
                     </Typography>
