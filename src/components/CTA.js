@@ -18,7 +18,7 @@ export default function CTA({openContactForm}) {
                 </Box>
                   <p className='cta-p'>지금 바로 신청하시면 3개월 추가 혜택을  <br className='brake'/>받으실 수 있습니다.</p>
                 <Button  sx={{paddingY:'1rem', paddingX:'3rem', borderRadius:'60px', bgcolor:'#00448A', mt:{xs:'0rem', md:'3rem'}}} size={'large'} variant='contained' onClick={openContactForm}>
-                    <Typography  color={'white'} variant='h4' fontWeight={'700'}>서비스의뢰</Typography>
+                    <Typography  color={'white'} variant='h4' fontWeight={'700'}>문의하기</Typography>
                 </Button>
             </Box>
         </Box>
