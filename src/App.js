@@ -1,7 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import Header from './components/Header.js';
-import {Hero, Location } from './components/Main.js';
+import ProcessDetailsComponent, {Hero, Location, Process } from './components/Main.js';
 import { Footer } from './components/Footer.js';
 import { ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material';
 import CTA from './components/CTA.js';
@@ -11,18 +11,7 @@ import { SnackbarProvider } from 'notistack';
 
 let theme = createTheme({
     typography: {
-      fontFamily: [
-        '-apple-system',
-        'BlinkMacSystemFont',
-        '"Segoe UI"',
-        'Roboto',
-        '"Helvetica Neue"',
-        'Arial',
-        'sans-serif',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-      ].join(','),
+      fontFamily:['"Nanum Gothic"','"Noto Sans KR"', 'sans-serif'].join(','),
     },
   palette: {
     text: {
@@ -64,6 +53,8 @@ function App() {
         <Header isOpen={isOpen} opClose={opClose} formIsOpen={formIsOpen} openContactForm={openContactForm} />
         <Hero isOpen={isOpen}/>
         <CTA openContactForm = {openContactForm}/>
+        <Process/>
+        <ProcessDetailsComponent/>
         <Location/>
         <Footer/>
 

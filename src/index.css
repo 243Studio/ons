@@ -1,8 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@100..900&display=swap');
+/**@font-face {
+  font-family: 'noto-kr';
+  src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap') format("woff");
+
+}
+@font-face {
+  font-family: 'nanum';
+  src: url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&display=swap') format("woff");
+
+}**/
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Noto Sans KR","Nanum Gothic", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

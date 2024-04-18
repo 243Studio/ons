@@ -1,18 +1,17 @@
 import './component.css';
-import { googleMapLink } from '../utils/utils';
-
+import { googleMapLink, processDetails, processSteps } from '../utils/utils';
+import './Main.css'
+import logo from '../assets/img/logo/logo-responsive.png';
 import * as React from 'react';
 import building1 from '../assets/img/building1.jpg';
 import building2 from '../assets/img/building2.jpg';
-import Typography from '@mui/material/Typography';
-import { Box } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import { CustomCarousel } from './Carousel';
 import service1 from '../assets/img/icons/service1.png';
 import service2 from '../assets/img/icons/service2.png';
 import service3 from '../assets/img/icons/service3.png';
 import Services from './Services';
-import location from '../assets/img/icons/location.png';
-
+import './CTA.css'
 const images = [
   {
     "name":"building 1", 
@@ -47,14 +46,87 @@ function Hero({isOpen}) {
 function Location()
 {
   return(
-    <Box id="오시는길" sx={{maxWidth:'100vw', display:'flex', flexDirection:'column', justifyContent:"flex-start", alignItems:'center', }}>
-      <Box my={{xs:'0.5rem', md:'2rem' }} sx={{ display:'flex', pt:'5rem',justifyContent:'center', alignItems:'center'}} >
-        <img alt={`${location}`} style={{height:'35px', width:'auto', paddingRight:'1rem'}} src={location} ></img>
-        <Typography color="text.tertiary" fontWeight={'bold'}   variant="h3">오시는길</Typography>
-  </Box>
-      <iframe title='google-map' style={{width:'100vw'}} src={googleMapLink}  height="400" className='map' loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+    <Box id="오시는길" sx={{paddingTop:{xs:'50px',md:'100px'},maxWidth:'100vw', display:'flex', flexDirection:'column', justifyContent:"flex-start", alignItems:'center' }}>
+
+      <iframe title='google-map' className="google-map" style={{width:'100vw'}} src={googleMapLink}    loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
     </Box>
   )
 }
 
-export {Hero, Location}
+function Process(){
+  
+  let processList = processSteps.map((step, index) => (
+    <Grid key={index} item xs={4} md={2.4}>
+      <img alt={`process ${step.tittle}`} className='process-illustration' src={step.illustration}/>
+      <Typography className='process-number' sx={{marginY:{xs:'1rem', md:'1.5rem'}, position:'relative', color:'white', fontWeight:'600', marginX:'auto', backgroundColor:'#00448A', width:'42px', borderRadius:'100%'}}variant='h4'>{index + 1}</Typography>
+      <Typography variant='h7' sx={{width:'10%', fontWeight:550, fontSize:'14px', fontFamily:'Noto Sans KR, sans-serif'}} >{step.title}</Typography>
+    </Grid>
+  ))
+  return(
+    <Box className="process-container" sx={{paddingTop:{xs:'80px', md:'150px'}, position:'relative', width:{xs:'90%', md:'65%'}}}>
+      <Box sx={{marginBottom:{xs:'50px', md:'100px'}}}>
+        <Box sx={{marginBottom:'1rem', display:'flex', flexDirection:'row', justifyContent:"center", alignItems:'center'}}>
+          <img alt="OnS logo" style={{height:'50px', width:'auto'}} src={logo}></img>
+          <Typography variant='h3' fontWeight={800}>팔레트 <span style={{color:'#00448A'}}>진행프로세스</span></Typography>
+        </Box>
+        <Typography sx={{width:{xs:'80%', md:'100%'}, marginX:'auto', fontSize:{xs:'1rem', md:'1.2rem'}}}>체계적인 운영 프로세스를 통해 깔끔하고 <br className='brake'></br>효율적인 솔루션 제공</Typography>
+      </Box>
+      <Grid container spacing={4}>
+        {processList}
+      </Grid>
+    </Box>
+  )
+}
+
+function ProcessDetailItemList({detail}){
+  let detailList = detail.map((item, index) => (<li style={{fontSize:'10px', textAlign:'left'}} key={index}>{item}</li>))
+  return(
+    <>{detailList}</>
+  )
+}
+function ProcessDetailItemComponent({content}){
+  let titleStyle= {fontSize:'12px', textAlign:'left', fontWeight:'550', fontFamily:'Noto Sans KR, sans-serif'}
+
+  let contentList = content.map((detail, index) => (
+    <div style={{display:'flex', width:'100%', justifyContent:'space-between'  }} key={index}>
+      <p style={{fontSize:'8px', backgroundColor:'#00448A', width:'12px', display:'flex', justifyContent:'center', alignItems:'center', height:'12px', marginTop:'4px', color:'white', borderRadius:'100%', marginRight:'4px'}}>{index + 1}</p>
+      <Box sx={{display:'flex', flexDirection:'column', width:'90%' }}>
+        <Typography sx={titleStyle} variant='h7'>{detail[0]}</Typography>
+        {
+          detail.length > 1 
+          && (
+            <ul style={{display:'flex', paddingInlineStart:'10px', listStyleType:"-", marginBlock:'0.3rem', flexDirection:'column'}}>
+              <ProcessDetailItemList detail={detail[1]}/>
+            </ul>
+            )
+          }
+        </Box>
+    </div>
+  ))
+  return(
+    <Box>
+      {contentList}
+      {/**<Typography variant='h7' sx={{fontWeight:550, fontSize:'14px', fontFamily:'Noto Sans KR, sans-serif'}} >{content}</Typography>**/}
+    </Box>
+  )
+}
+
+export default function ProcessDetailsComponent() {
+let processDetailList = processDetails.map((detail, index) => (
+  <Grid sx={{border:"1px solid rgba(0,0,0,0.2)", width:{xs:'90%',md:'100%'}, marginLeft:{xs:'2px', md:'0px'}, marginBottom:'1rem', display:'flex', paddingY:'0 !important', flexDirection:'column'}} key={index} item xs={5.8} md={2.3} >
+    <img alt={`process ${detail.title}`} className='process-image' src={detail.img}/>
+    <Box sx={{width:'90%', marginX:'auto', marginY:'1rem'}}>
+      <ProcessDetailItemComponent content={detail.content}/>
+    </Box>
+  </Grid>
+))
+  return (
+    <Box sx={{ marginTop:'5rem',width:{xs:'95%', md:'70%'}}}>
+      <Grid  sx={{display:'flex', justifyContent:{xs:'space-between', md:"none"}}} container rowSpacing={{xs:'10', md:'0'}}>
+        {processDetailList}
+      </Grid>
+    </Box>
+  )
+}
+
+export {Hero, Location, Process, ProcessDetailsComponent}

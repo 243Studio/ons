@@ -1,26 +1,20 @@
 
 
-@font-face {
-  font-family: 'myungjo';
-  src: url('./assets/fonts/Adobe\ Myungjo\ Std\ M.otf') format("M.otf");
-  font-weight: normal;
-  font-style: normal;
-}
+
 .App {
   display: flex;
   flex-direction: column;
   text-align: center;
   box-sizing: border-box;
+  align-items: center;
 }
 #root.p{
   max-width:100%;
-  font-family: 'Segoe UI',sans-serif;
 }
 
 
 
 body{
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   all: unset;
   width:100%;
   display: flex;

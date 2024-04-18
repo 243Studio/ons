@@ -139,7 +139,7 @@ let pagesOptions = pageNames.map((pageName, index) => (
               }}
             >
               {pagesOptions}
-              <Button  sx={{bgcolor:'#00448A', ml:'3rem'}} size={'medium'} variant='contained' onClick={openContactForm}>
+              <Button  sx={{bgcolor:'#00448A', ml:'3rem', borderRadius:'60px'}} size={'medium'} variant='contained' onClick={openContactForm}>
                   <Typography  color={'white'} variant='h7'>서비스의뢰</Typography>
               </Button>            
             </Box>
@@ -164,7 +164,7 @@ let pagesOptions = pageNames.map((pageName, index) => (
                 >
                   {pagesOptions}
                   <Divider />
-                  <Button  sx={{bgcolor:'#00448A'}} size={'medium'} variant='contained' onClick={didi}>
+                  <Button  sx={{bgcolor:'#00448A', borderRadius:'60px'}} size={'medium'} variant='contained' onClick={didi}>
                     <Typography  color={'white'} variant='h7'>서비스의뢰</Typography>
                   </Button> 
                 </Box>

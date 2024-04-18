@@ -100,14 +100,14 @@ header{
     position:absolute; 
     top:90%; 
     left:10%;
-    height:110px;
+    height:170px;
     width:auto
   }
   #illust2{
     position:absolute; 
     top:83%; 
     left:78%;
-    height:160px;
+    height:210px;
     opacity:1;
     width:auto
   }
@@ -203,6 +203,10 @@ header{
     align-content: center;
   }
   @media (max-width: 768px) {
+
+    .carousel-root{
+      margin-bottom:0
+    }
     .nav-links {
       position: absolute;
       background: white;

@@ -6,8 +6,8 @@ import artsyLine from '../assets/img/icons/artsyline.png'
 function CustomCarousel({items})
 {    
     return (
-        <Carousel 
-        
+        <Carousel className='carousel-root'
+
         indicatorContainerProps={{
             style: {
                 position:'absolute',
@@ -31,11 +31,12 @@ function CustomCarousel({items})
                 margin: '0 3px'       // 3
             }
         }}
-        navButtonsAlwaysInvisible={true} sx={{maxHeight:{xs:'100vh', md:'100vh'}, width:'100vw'}} indicators={true} interval={4000} 
+        navButtonsAlwaysInvisible={true} sx={{marginBottom:{xs:'0', md:'105px'}, maxHeight:{xs:'100vh', md:'100vh'}, width:'100vw'}} indicators={true} interval={4000} 
         >
             {
                 items.map( (itemName) => <Item  key={itemName} item={itemName} />)
             }
+
         </Carousel>
     )
 }

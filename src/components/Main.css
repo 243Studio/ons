@@ -1,0 +1,61 @@
+.process-illustration{
+    height:72px;
+    width:auto;
+    opacity:0.4;
+}
+
+.process-image{
+    height:142px;
+    width: 100%;
+    object-fit: cover;
+}
+.process-container::before{
+    content:'';
+    width:106vw;
+    height:5px;
+    background-color: #00448A;
+    position:absolute;
+    top: 84.5%;
+    left:-35%;
+}
+.google-map{
+    width:100vw;
+    height:575px;
+}
+
+.process-number::after{
+    content:"";
+    background-color: #00448A;
+    position: absolute;
+    width:50%;
+    height:50%;
+    top:25%;
+    right:-5%;
+    rotate: 45deg;
+    z-index: -1;
+
+}
+
+@media (max-width: 768px) {
+    .process-container::before{
+        content:none;
+    }
+    .process-illustration{
+        height:50px;
+        width:auto;
+    }
+
+    .process-number::after{
+        width:40%;
+        height:40%;
+        top:25%;
+    }
+    .google-map{
+        height:350px;
+    }
+    .process-image{
+        height:182px;
+        width: 100%;
+    }
+    
+}

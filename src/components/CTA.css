@@ -1,0 +1,60 @@
+.cta-h2::after{
+    content:'';
+    height:42px;
+    width:42px;
+    background:url(../assets/img/icons/icon-gift-box.png);
+    background-size: cover;
+    display:block;
+    position:absolute;
+    top:5px;
+    right:-52px;
+}
+
+.cta-span::before{
+    content:'+';
+    top:2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ff6c7d;
+    color:white;
+    position:absolute;
+    height:32px;
+    width:32px;
+    border-radius:50%;
+    font-size: 39px;
+    font-weight: 600;
+    left: -50px;
+    padding:3px;
+}
+
+.cta-p{
+    margin-top:2rem;
+    font-size:1.2rem;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.brake{
+    display:none !important;
+}
+
+@media (max-width: 768px) {
+    .brake{
+        display:block !important;
+    }
+    .cta-h2{
+    }
+    .cta-span{
+        margin-left:50px !important;
+    }
+    .cta-h2::after{
+        top:-50px;
+        left:50%;
+        right:auto;
+        transform:translateX(-50%)
+    }
+    .cta-p{
+        font-size:1rem;
+        line-height: 1.5rem;
+    }
+}
