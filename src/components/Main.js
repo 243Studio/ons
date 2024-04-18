@@ -85,7 +85,7 @@ function ProcessDetailItemList({detail}){
   )
 }
 function ProcessDetailItemComponent({content}){
-  let titleStyle= {fontSize:'12px', textAlign:'left', fontWeight:'550', fontFamily:'Noto Sans KR, sans-serif'}
+  let titleStyle= {fontSize:{xs:'10px', md:'12px'}, textAlign:'left', fontWeight:'550', fontFamily:'Noto Sans KR, sans-serif'}
 
   let contentList = content.map((detail, index) => (
     <div style={{display:'flex', width:'100%', justifyContent:'space-between'  }} key={index}>
