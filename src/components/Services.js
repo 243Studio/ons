@@ -24,7 +24,6 @@ let textGridStyleEven = {
   backgroundColor:'#F4F4F4',
   width:'100%',
   color:'black',
-  paddingLef:'20rem'
 }
 
 export default function Services() {

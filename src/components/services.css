@@ -58,7 +58,8 @@
     left:0;
 }
 .service-right{
-    left:48% !important;
+    left:auto !important;
+    right:0% !important;
 }
 .service-image-darkbg{
     display: flex;
